@@ -1,2 +1,2 @@
 # MemoryGame
-Game to improve your concentration
+Game for improve your concentration
