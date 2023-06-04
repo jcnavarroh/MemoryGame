@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const globImporter = require('node-sass-glob-importer');
+
 
 module.exports = {
     entry: './src/index.js',
@@ -30,13 +32,35 @@ module.exports = {
                 ]
             },
             {
-				test: /\.s[ac]ss$/i,
-				use: [
-					"style-loader",
-					"css-loader",
-					"sass-loader",
-				],
-			}
+                test: /\.(scss)$/,
+                use: [
+                {
+                    loader: 'style-loader'
+                },
+                {
+                    loader: 'css-loader'
+                },
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                    postcssOptions: {
+                        plugins: () => [
+                        require('autoprefixer')
+                        ]
+                    }
+                    }
+                },
+                {
+                    loader: 'sass-loader',
+                    options: {
+                        sassOptions: {
+                            importer: globImporter()
+                        }
+                    }
+                }
+                ]
+            }
+
         ]
     },
     plugins: [
@@ -45,14 +69,14 @@ module.exports = {
             filename: './index.html'
         }),
         new MiniCssExtractPlugin({
-			filename: '[name].css'
-		}),
+            filename: 'style.css'
+        }),
     ],
     devServer: {
         static: {
-          directory: path.join(__dirname, 'public'),
-          },
+        directory: path.join(__dirname, 'public'),
+        },
         compress: true,
         port: 3000,
-      }
+    }
 }

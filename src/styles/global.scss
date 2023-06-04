@@ -1,8 +1,9 @@
-$base-color: #000fff;
-$color: #000000;
+// Import all of Bootstrap's CSS
+@import "~bootstrap/scss/bootstrap";
 
+// Import base styles 
+@import "variables";
+@import "base";
 
-body {
-    background-color: $base-color;
-    color: $color;
-}
+// Import our custom SCSS files - import all files inside the directories and subdirectories of 'styles'.
+@import 'compnents/*.scss';
