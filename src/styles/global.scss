@@ -1,9 +1,9 @@
-// Import all of Bootstrap's CSS
-@import "~bootstrap/scss/bootstrap";
-
 // Import base styles 
 @import "variables";
 @import "base";
+
+// Import all of Bootstrap's CSS
+@import "~bootstrap/scss/bootstrap";
 
 // Import our custom SCSS files - import all files inside the directories and subdirectories of 'styles'.
 @import 'compnents/*.scss';
