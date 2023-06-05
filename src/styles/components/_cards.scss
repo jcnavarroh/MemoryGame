@@ -1,0 +1,57 @@
+.game-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    .game-card {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        @media screen and (max-width: $bp-md) {
+            width: 32vw;
+        }
+        @media screen and (min-width: $bp-md) {
+            width: 16vw;
+        }
+        .card-image {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            @media screen and (max-width: $bp-md) {
+                width: 32vw;
+                height: 40vw;
+            }
+            @media screen and (min-width: $bp-md) {
+                width: 16vw;
+                height: 20vw;
+            }
+        }
+        &--fixed {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+
+            .card-image {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                @media screen and (max-width: $bp-md) {
+                    width: 32vw;
+                    height: 40vw;
+                }
+                @media screen and (min-width: $bp-md) {
+                    width: 16vw;
+                    height: 20vw;
+                }
+            }
+        }
+    }
+}   

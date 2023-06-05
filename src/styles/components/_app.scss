@@ -1,0 +1,12 @@
+.app {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    text-align: center;
+    font-size: 3rem;
+    color: black;
+    font-style: italic;
+    font-weight: bold; 
+}
