@@ -1,5 +1,6 @@
 import React from 'react';
 import Score from './score';
+import Congrats from '../../public/assets/images/congrats.gif'
 
 const Result = (props) => {
     let [message, setMessage] = React.useState('')
@@ -17,17 +18,16 @@ const Result = (props) => {
         } else {
             setMessage(`CONGRATULATIONS!, ${props.playerNames[1]}. You win`);
         }
-    }, [props.score, props.playerNames])
+    }, [props.hits, props.playerNames])
     return(<div className="result">
-        <div className="result-icon">
-            Win Icon
-        </div>
-        <div className="title">{message}</div>
+        <img className="congrats-gif" src={Congrats} alt="You Win! Congratulations."/>
+        <h1 className="title">{message}</h1>
         <div><Score {...props}/></div>
-        <button className="game-button" onClick={()=>{props.setGameOver(false);
+        <button className="game-button btn btn-primary" onClick={()=>{props.setGameOver(false);
             props.setHits([0, 0]);
             props.setMisses([0, 0]);
-            props.setStartGame(false)}}>Play again!</button>
+            props.setStartGame(false)}}>Play again!
+        </button>
     </div>)
 }
 

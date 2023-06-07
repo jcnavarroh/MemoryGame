@@ -1,0 +1,60 @@
+.header {
+    color: $white;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    height: 60px;
+    margin: 0;
+    svg {
+        color: $color-primary-light;
+        font-size: 2rem;
+    }
+    .navbar {
+        height: 60px;
+    }
+    .navbar-brand {
+        color: $white;
+        &:hover {
+            color: $color-primary-light;
+        }
+        padding: 0 1rem;
+        margin: 0;
+        @media screen and (min-width: $bp-md) {
+            border-right: 2px solid $color-primary-light;
+        }
+    }
+    .navbar-toggler {
+        background-color: $primary;
+    }
+    .offcanvas {
+        .offcanvas-body {
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            span {
+                color: $white;
+            }
+            .sub-title{
+                position: relative;
+                width: fit-content;
+                margin: 0 1rem;
+            }
+            .header-score {
+                width: fit-content;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                margin-right: 5rem;
+            }
+            .header-buttons {
+                button {
+                    margin-left: 2rem;
+                    padding: 0.5rem 2rem;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}

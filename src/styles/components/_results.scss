@@ -1,0 +1,22 @@
+.result {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    .title {
+        text-align: center;
+    }
+
+    .score-board {
+        width: 80vw;
+    }
+
+    .game-button {
+        width: 80vw;
+        max-width: 400px;
+    }
+}
+

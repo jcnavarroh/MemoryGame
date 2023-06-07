@@ -42,30 +42,26 @@ const PlayersSelect = (props) => {
     }
 
     return(<div className="players-select">
-        <div className="players-select-title">Complete with the names of players.</div>
-        <div className="players-form">
+        <h1 className="players-select-title">Complete with the names of players</h1>
+        <form className="players-form form-floating">
             <div className="player-main player-main-1">
+                <label for="player1">Player 1</label>
                 <div>
-                    Player 1
-                </div>
-                <div>
-                    <input className="form-element" name="player1" onChange={onInputChange} value={defaultPlayerNames[0]} placeholder={defaultPlayerNames[0]} onClick={onInputClick}/>
+                    <input className="form-element form-control" id="player1" name="player1" onChange={onInputChange} value={defaultPlayerNames[0]} placeholder={defaultPlayerNames[0]} onClick={onInputClick}/>
                     {invalidFields[0] && <div className="form-error-message">Please, set a name!</div>}
                 </div>
                 
             </div>
             <div className="player-main player-main-2">
+                <label for="player2">Player 2</label>
                 <div>
-                    Player 2
-                </div>
-                <div>
-                    <input className="form-element" name="player2" onChange={onInputChange} value={defaultPlayerNames[1]} placeholder={defaultPlayerNames[1]} onClick={onInputClick}/>
+                    <input className="form-element form-control" id="player2" name="player2" onChange={onInputChange} value={defaultPlayerNames[1]} placeholder={defaultPlayerNames[1]} onClick={onInputClick}/>
                     {invalidFields[1] && <div className="form-error-message">Please, set a name!</div>}
                 </div>
                 
             </div>
-        </div>
-        <button className="game-button start-button" onClick={onStartClick}>Start</button>  
+            <button className="game-button start-button btn btn-primary" onClick={onStartClick}>Start</button> 
+        </form>
     </div>)
 }
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 const Card = (props) => {
     const onCardClicked = async () => {
@@ -54,39 +56,45 @@ const Card = (props) => {
             }
         }
     }
-    return(<div className={props.removeCards[props.cardIndex] ? "game-card--fixed" :"game-card"} onClick={onCardClicked}>
-        {!props.removeCards[props.cardIndex] && props.viewCards[props.cardIndex] && 
-            <>
-                <div className="card-image card-image--show" style={{ 
-                    backgroundImage: `url("${props.card.image}")` 
-                }}/>
-                <div className="card-name"> 
-                    {props.card.name}
-                </div>
-            </>
-        }
+    return(
+        <div className={props.removeCards[props.cardIndex] ? "game-card game-card--fixed" :"game-card"} onClick={onCardClicked}>
+            <div className="card">
+                
+                {!props.removeCards[props.cardIndex] && props.viewCards[props.cardIndex] && 
+                    <div className="card--front text-center bg-primary">
+                        <div className="card-image card-image--show card-img-top" style={{ 
+                            backgroundImage: `url("${props.card.image}")` 
+                        }}/>
+                        <div className="card-body">
+                            <p className="card-text card-name">{props.card.name}</p>
+                        </div>
+                    </div> 
+                }
 
-        {props.removeCards[props.cardIndex] && 
-            <>
-                <div className="card-image card-image--fixed" style={{ 
-                    backgroundImage: `url("${props.card.image}")` 
-                }}/>
-                <div className="card-name"> 
-                    {props.card.name}
-                </div>
-            </>
-        }
+                {props.removeCards[props.cardIndex] && 
+                    <div className="card--front text-center bg-primary">
+                        <div className="card-image card-image--fixed card-img-top" style={{ 
+                            backgroundImage: `url("${props.card.image}")` 
+                        }}/>
+                        <div className="card-body">
+                            <p className="card-text card-name">{props.card.name}</p>
+                        </div>
+                    </div>
+                }
 
-        {!props.removeCards[props.cardIndex] && !props.viewCards[props.cardIndex] && 
-        <>
-            <div className="card-image card-image--hide">
-                <span>?</span>
+                {!props.removeCards[props.cardIndex] && !props.viewCards[props.cardIndex] && 
+                    <div className="card--back text-center bg-dark">
+                        <div className="card-image card-image--hide card-img-top">
+                            <FontAwesomeIcon icon={faQuestionCircle} />
+                        </div>
+                        <div className="card-body">
+                            <p className="card-text card-name">Click to view</p>
+                        </div>
+                    </div>
+                }
             </div>
-            <div className="card-name"> 
-                Click to view card
-            </div>
-        </>}
-    </div>)
+        </div>
+    )
 }
 
 export default Card;

@@ -75,9 +75,11 @@ const App = () => {
     return (
         <div className="app">
             <Header hits={hits} misses={misses} playerNames={playerNames}/>
-            {!startGame && <PlayersSelect playerNames={playerNames} setPlayerNames={setPlayerNames} setStartGame={setStartGame}/>}
-            {startGame && !gameOver && <Game cardsDeck={cardsDeck} hits={hits} misses={misses} setHits={setHits} setMisses={setMisses} setGameOver={setGameOver} playerNames={playerNames}/>}
-            {startGame && gameOver && <Result hits={hits} misses={misses} setHits={setHits} setMisses={setMisses} setGameOver={setGameOver} playerNames={playerNames} setStartGame={setStartGame}/>}
+            <main className="main">
+                {!startGame && <PlayersSelect playerNames={playerNames} setPlayerNames={setPlayerNames} setStartGame={setStartGame}/>}
+                {startGame && !gameOver && <Game cardsDeck={cardsDeck} hits={hits} misses={misses} setHits={setHits} setMisses={setMisses} setGameOver={setGameOver} playerNames={playerNames}/>}
+                {startGame && gameOver && <Result hits={hits} misses={misses} setHits={setHits} setMisses={setMisses} setGameOver={setGameOver} playerNames={playerNames} setStartGame={setStartGame}/>}
+            </main>
             <Footer />
         </div>
     );

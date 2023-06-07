@@ -1,3 +1,29 @@
+/**
+* Fonts - Google
+*/
+
+
+//'Roboto Condensed'
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+//'Raleway'
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,600;1,700;1,800;1,900&display=swap');
+
+
+h1, h2, h3, h4, h5, h6, span, p, a, button {
+    font-family: 'Roboto Condensed';
+}
+
+.btn {
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed';
+    font-weight: bold;
+}
+
+input, label, textarea, select {
+    font-family: 'Raleway';
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -347,3 +373,6 @@ template {
 [hidden] {
     display: none;
 }
+
+
+

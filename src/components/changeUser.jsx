@@ -13,7 +13,7 @@ const ChangeUser = () => {
 
     return (
         <button onClick={onChangeUser} className="btn btn-primary">
-            Change player's name
+            change player name
         </button>
     )
 

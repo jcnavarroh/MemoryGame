@@ -3,4 +3,13 @@
     color: $font-main-text;
     padding: 3rem 2rem;
     margin-top: 2rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 140px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }

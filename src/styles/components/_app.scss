@@ -1,12 +1,18 @@
 .app {
     display: flex;
     flex-direction: column;
+    background-color: $gray-200;
+    min-height: 100vh;
+}
+
+main {
+    min-height: calc(100vh - 200px);
 }
 
 .message {
     text-align: center;
     font-size: 3rem;
-    color: black;
-    font-style: italic;
+    color: $color-tertiary-dark;
     font-weight: bold; 
+    font-family: 'Raleway';
 }

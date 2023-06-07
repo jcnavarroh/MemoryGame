@@ -1,0 +1,27 @@
+.players-select {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    &-title {
+        margin-top: 3rem;
+    }
+}
+
+.players-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    margin-top: 2rem;
+    .game-button {
+        margin: 2rem 0;
+    }
+    .player-main {
+        width: 400px;
+        margin-bottom: 1rem;
+    }
+}
+
